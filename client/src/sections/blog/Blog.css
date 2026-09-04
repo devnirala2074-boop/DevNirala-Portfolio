@@ -1,0 +1,154 @@
+.blog-section {
+  padding: 140px 32px;
+  position: relative;
+}
+
+.blog-container {
+  max-width: 1460px;
+  margin: 0 auto;
+}
+
+.blog-header {
+  max-width: 900px;
+  margin-bottom: 70px;
+}
+
+.blog-header .section-label {
+  display: block;
+  margin-bottom: 28px;
+  color: var(--accent-primary);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.blog-header h2 {
+  margin: 0;
+  font-size: clamp(52px, 7vw, 88px);
+  line-height: 0.98;
+  letter-spacing: -4px;
+  color: #f8fafc;
+}
+
+.blog-header h2 span {
+  background: linear-gradient(90deg, #a78bfa, #60a5fa);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.blog-header p {
+  margin-top: 30px;
+  max-width: 700px;
+  color: #aab4c8;
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.blog-card {
+  min-height: 390px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background: rgba(13, 19, 38, 0.72);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  border-radius: 24px;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(139, 92, 246, 0.5);
+  box-shadow: 0 20px 70px rgba(76, 29, 149, 0.18);
+}
+
+.blog-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: #8b5cf6;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.blog-card h3 {
+  margin: 55px 0 18px;
+  color: #f8fafc;
+  font-size: 30px;
+  line-height: 1.15;
+}
+
+.blog-card p {
+  color: #aab4c8;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.blog-card-bottom {
+  margin-top: 35px;
+  padding-top: 22px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-top: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.blog-card-bottom span {
+  color: #68748b;
+  font-size: 13px;
+}
+
+.blog-card-bottom button {
+  border: none;
+  background: transparent;
+  color: #a78bfa;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.blog-card-bottom button:hover {
+  color: #60a5fa;
+}
+
+@media (max-width: 900px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-section {
+    padding: 100px 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .blog-header h2 {
+    font-size: 48px;
+    letter-spacing: -2px;
+  }
+
+  .blog-header p {
+    font-size: 17px;
+  }
+
+  .blog-card {
+    min-height: 350px;
+    padding: 25px;
+  }
+}

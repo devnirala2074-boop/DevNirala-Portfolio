@@ -1,0 +1,781 @@
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: calc(var(--navbar-height) + 3rem) 0 4rem;
+  overflow: hidden;
+}
+
+
+/* =========================================
+   HERO CONTAINER
+========================================= */
+
+.hero-container {
+  width: min(
+    calc(100% - 3rem),
+    var(--container-width)
+  );
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+
+  gap: 3rem;
+}
+
+
+/* =========================================
+   LEFT CONTENT
+========================================= */
+
+.hero-content {
+  position: relative;
+  z-index: 5;
+
+  animation: fadeUp 0.8s ease forwards;
+}
+
+
+/* ---------- STATUS ---------- */
+
+.hero-status {
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  margin-bottom: 1.5rem;
+
+  padding: 0.5rem 0.85rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+
+  background: rgba(15, 23, 42, 0.45);
+
+  color: var(--color-text-secondary);
+
+  font-size: var(--text-sm);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 12px rgba(34, 197, 94, 0.8);
+
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+
+/* ---------- GREETING ---------- */
+
+.hero-greeting {
+  margin-bottom: 0.35rem;
+
+  color: var(--color-text-secondary);
+
+  font-size: var(--text-xl);
+}
+
+
+/* ---------- TITLE ---------- */
+
+.hero-title {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 0.8rem;
+
+  font-size: clamp(3.5rem, 6vw, 6rem);
+
+  line-height: 0.95;
+
+  letter-spacing: -0.055em;
+
+  font-weight: 800;
+}
+
+.hero-title span {
+  width: fit-content;
+
+  background: var(--gradient-text);
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* ---------- ROLE ---------- */
+
+.hero-role {
+  margin-bottom: 1.5rem;
+
+  color: var(--color-accent-primary);
+
+  font-size: clamp(1.35rem, 2.5vw, 2rem);
+
+  font-weight: 600;
+}
+
+
+/* ---------- DESCRIPTION ---------- */
+
+.hero-description {
+  max-width: 650px;
+
+  margin-bottom: 2rem;
+
+  color: var(--color-text-secondary);
+
+  font-size: var(--text-lg);
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 1rem;
+
+  margin-bottom: 2rem;
+}
+
+.hero-primary-button,
+.hero-secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.6rem;
+
+  padding: 0.85rem 1.35rem;
+
+  border-radius: var(--radius-md);
+
+  font-weight: 600;
+
+  transition:
+    transform var(--transition-normal),
+    border-color var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+
+/* Primary */
+
+.hero-primary-button {
+  background: var(--gradient-primary);
+
+  color: #ffffff;
+
+  box-shadow: var(--shadow-glow);
+}
+
+.hero-primary-button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 35px rgba(139, 92, 246, 0.35);
+}
+
+
+/* Secondary */
+
+.hero-secondary-button {
+  border: 1px solid var(--color-border);
+
+  background: rgba(15, 23, 42, 0.4);
+
+  color: var(--color-text-primary);
+}
+
+.hero-secondary-button:hover {
+  transform: translateY(-3px);
+
+  border-color: var(--color-accent-primary);
+}
+
+
+/* =========================================
+   SOCIAL LINKS
+========================================= */
+
+.hero-socials {
+  display: flex;
+  align-items: center;
+
+  gap: 1.5rem;
+}
+
+.hero-socials a {
+  color: var(--color-text-muted);
+
+  font-size: var(--text-sm);
+
+  transition:
+    color var(--transition-normal),
+    transform var(--transition-normal);
+}
+
+.hero-socials a:hover {
+  color: var(--color-accent-primary);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   RIGHT VISUAL
+========================================= */
+
+.hero-visual {
+  position: relative;
+
+  min-height: 600px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  overflow: visible;
+
+  animation: fadeRight 1s ease forwards;
+}
+
+
+/* =========================================
+   PURPLE / BLUE ORB
+========================================= */
+
+.profile-orb {
+  position: absolute;
+
+  width: 390px;
+  height: 390px;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -48%);
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #8b5cf6 0%,
+      #6366f1 45%,
+      #3b82f6 100%
+    );
+
+  box-shadow:
+    0 0 70px rgba(139, 92, 246, 0.45),
+    0 0 140px rgba(59, 130, 246, 0.25);
+
+  animation: orbPulse 5s ease-in-out infinite;
+}
+
+
+/* =========================================
+   SOFT GLOW
+========================================= */
+
+.profile-glow {
+  position: absolute;
+
+  width: 430px;
+  height: 430px;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -48%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(139, 92, 246, 0.35),
+      rgba(59, 130, 246, 0.18) 45%,
+      transparent 72%
+    );
+
+  filter: blur(35px);
+
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+
+/* =========================================
+   DOTTED BACKGROUND
+========================================= */
+
+.profile-dots {
+  position: absolute;
+
+  width: 210px;
+  height: 210px;
+
+  top: 8%;
+  right: 0;
+
+  opacity: 0.35;
+
+  background-image:
+    radial-gradient(
+      rgba(139, 92, 246, 0.7) 1px,
+      transparent 1px
+    );
+
+  background-size: 14px 14px;
+
+  mask-image:
+    linear-gradient(
+      to bottom left,
+      black,
+      transparent
+    );
+
+  -webkit-mask-image:
+    linear-gradient(
+      to bottom left,
+      black,
+      transparent
+    );
+}
+
+
+/* =========================================
+   PROFILE IMAGE
+========================================= */
+
+.hero-profile-image {
+  position: relative;
+
+  z-index: 2;
+
+  display: block;
+
+  width: min(100%, 500px);
+
+  max-height: 620px;
+
+  object-fit: contain;
+
+  object-position: bottom center;
+
+  filter:
+    drop-shadow(0 20px 35px rgba(0, 0, 0, 0.35))
+    drop-shadow(0 0 25px rgba(99, 102, 241, 0.12));
+
+  animation: profileFloat 5s ease-in-out infinite;
+}
+
+
+/* =========================================
+   FLOATING BADGES
+========================================= */
+
+.floating-badge {
+  position: absolute;
+
+  z-index: 5;
+
+  padding: 0.65rem 1rem;
+
+  border: 1px solid rgba(139, 92, 246, 0.2);
+
+  border-radius: var(--radius-md);
+
+  background: rgba(15, 23, 42, 0.85);
+
+  color: var(--color-text-primary);
+
+  font-size: var(--text-sm);
+
+  font-weight: 600;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.25);
+
+  backdrop-filter: blur(12px);
+}
+
+
+/* React */
+
+.badge-one {
+  top: 18%;
+  left: 4%;
+
+  animation:
+    float 4s ease-in-out infinite;
+}
+
+
+/* Node */
+
+.badge-two {
+  right: 0;
+  bottom: 27%;
+
+  animation:
+    float 4.5s ease-in-out infinite 0.5s;
+}
+
+
+/* MongoDB */
+
+.badge-three {
+  left: 10%;
+  bottom: 8%;
+
+  animation:
+    float 5s ease-in-out infinite 1s;
+}
+
+
+/* =========================================
+   SCROLL
+========================================= */
+
+.hero-scroll {
+  position: absolute;
+
+  bottom: 1.5rem;
+  left: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 0.5rem;
+
+  transform: translateX(-50%);
+
+  color: var(--color-text-muted);
+
+  font-size: var(--text-xs);
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 35px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      var(--color-accent-primary),
+      transparent
+    );
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes orbPulse {
+  0%,
+  100% {
+    transform: translate(-50%, -48%) scale(1);
+  }
+
+  50% {
+    transform: translate(-50%, -48%) scale(1.04);
+  }
+}
+
+@keyframes profileFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .hero-container {
+    grid-template-columns: 1fr 0.9fr;
+
+    gap: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 6vw, 4.8rem);
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-visual {
+    min-height: 500px;
+  }
+
+  .profile-orb {
+    width: 330px;
+    height: 330px;
+  }
+
+  .profile-glow {
+    width: 370px;
+    height: 370px;
+  }
+
+  .hero-profile-image {
+    width: 100%;
+  }
+}
+
+
+/* =========================================
+   MOBILE / TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .hero {
+    padding-top: 7rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+
+    gap: 2rem;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-status {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-title {
+    align-items: center;
+
+    font-size: clamp(
+      3rem,
+      12vw,
+      5rem
+    );
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+
+    max-width: 650px;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-socials {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    min-height: 500px;
+
+    margin-top: 1rem;
+  }
+
+  .hero-profile-image {
+    width: min(100%, 480px);
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .hero {
+    min-height: auto;
+
+    padding-top: 6rem;
+    padding-bottom: 5rem;
+  }
+
+  .hero-container {
+    width: min(
+      calc(100% - 2rem),
+      var(--container-width)
+    );
+  }
+
+  .hero-status {
+    font-size: 0.75rem;
+  }
+
+  .hero-greeting {
+    font-size: 1rem;
+  }
+
+  .hero-title {
+    font-size: clamp(
+      2.7rem,
+      15vw,
+      4rem
+    );
+
+    line-height: 0.98;
+  }
+
+  .hero-role {
+    font-size: 1.35rem;
+
+    margin-bottom: 1rem;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+
+    line-height: 1.6;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .hero-primary-button,
+  .hero-secondary-button {
+    width: 100%;
+  }
+
+  .hero-visual {
+    min-height: 380px;
+
+    margin-top: 0.5rem;
+  }
+
+  .profile-orb {
+    width: 270px;
+    height: 270px;
+  }
+
+  .profile-glow {
+    width: 310px;
+    height: 310px;
+
+    filter: blur(30px);
+  }
+
+  .hero-profile-image {
+    width: 100%;
+
+    max-height: 430px;
+  }
+
+  .profile-dots {
+    width: 130px;
+    height: 130px;
+
+    top: 5%;
+    right: -5%;
+  }
+
+  .floating-badge {
+    padding: 0.5rem 0.7rem;
+
+    font-size: 0.7rem;
+  }
+
+  .badge-one {
+    top: 20%;
+    left: 0;
+  }
+
+  .badge-two {
+    right: 0;
+    bottom: 27%;
+  }
+
+  .badge-three {
+    left: 4%;
+    bottom: 5%;
+  }
+
+  .hero-scroll {
+    display: none;
+  }
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+  .hero-title {
+    font-size: 2.6rem;
+  }
+
+  .hero-visual {
+    min-height: 340px;
+  }
+
+  .profile-orb {
+    width: 240px;
+    height: 240px;
+  }
+
+  .profile-glow {
+    width: 280px;
+    height: 280px;
+  }
+
+  .hero-profile-image {
+    max-height: 380px;
+  }
+}
