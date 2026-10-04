@@ -144,54 +144,6 @@
 }
 
 
-/* =====================================
-   RESUME BUTTON
-===================================== */
-
-.footer-resume {
-  display: inline-flex;
-
-  align-items: center;
-
-  gap: 12px;
-
-  padding: 15px 22px;
-
-  border: 1px solid rgba(139, 92, 246, 0.35);
-
-  border-radius: 12px;
-
-  background: rgba(124, 58, 237, 0.05);
-
-  color: #c4b5fd;
-
-  text-decoration: none;
-
-  font-size: 16px;
-
-  font-weight: 600;
-
-  transition:
-    background 0.3s ease,
-    border-color 0.3s ease,
-    transform 0.3s ease;
-}
-
-
-.footer-resume span {
-  font-size: 22px;
-
-  line-height: 1;
-}
-
-
-.footer-resume:hover {
-  background: rgba(124, 58, 237, 0.12);
-
-  border-color: #8b5cf6;
-
-  transform: translateY(-2px);
-}
 
 
 /* =====================================
@@ -725,11 +677,6 @@
   }
 
 
-  /* Resume Button */
-
-  .footer-resume {
-    width: fit-content;
-  }
 
 
   /* Column Headings */
@@ -820,11 +767,6 @@
 
   .footer-description {
     font-size: 15px;
-  }
-
-  .footer-resume {
-    width: 100%;
-    justify-content: center;
   }
 
   .footer-socials {

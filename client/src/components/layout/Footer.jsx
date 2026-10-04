@@ -68,14 +68,6 @@ function Footer() {
             scalable and interactive digital experiences.
           </p>
 
-          <a
-            href="/resume.pdf"
-            className="footer-resume"
-          >
-            <span>↓</span>
-            Download Resume
-          </a>
-
         </div>
 
 

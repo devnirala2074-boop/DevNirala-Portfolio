@@ -156,16 +156,6 @@ function Navbar({ darkMode, setDarkMode }) {
           </button>
 
 
-          {/* RESUME */}
-
-          <a
-            href="/resume.pdf"
-            className="resume-button"
-          >
-            Resume
-            <span>↓</span>
-          </a>
-
 
           {/* MOBILE MENU BUTTON */}
 
