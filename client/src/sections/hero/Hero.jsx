@@ -4,6 +4,7 @@
 // =====================================
 
 import "./Hero.css";
+import { FaGithub, FaLinkedinIn, FaEnvelope } from "react-icons/fa";
 
 function Hero() {
   return (
@@ -20,13 +21,13 @@ function Hero() {
           {/* Availability */}
           <div className="hero-status">
             <span className="status-dot"></span>
-            Available for opportunities
+            Available for Full-Time Roles & Opportunities
           </div>
 
 
           {/* Greeting */}
           <p className="hero-greeting">
-            Hi, I'm
+            Hello, I'm
           </p>
 
 
@@ -45,9 +46,20 @@ function Hero() {
 
           {/* Description */}
           <p className="hero-description">
-            I build modern, scalable and interactive digital
-            experiences using code, creativity and technology.
+            Building robust, scalable full-stack web applications with modern
+            architecture, clean RESTful APIs, and intuitive user experiences.
           </p>
+
+          {/* Tech Strengths Pills */}
+          <div className="hero-stack-pills">
+            <span>React.js</span>
+            <span className="dot">•</span>
+            <span>Node.js</span>
+            <span className="dot">•</span>
+            <span>Express.js</span>
+            <span className="dot">•</span>
+            <span>MongoDB</span>
+          </div>
 
 
           {/* Buttons */}
@@ -57,7 +69,7 @@ function Hero() {
               href="#projects"
               className="hero-primary-button"
             >
-              View Projects
+              Explore Projects
               <span>↗</span>
             </a>
 
@@ -65,7 +77,7 @@ function Hero() {
               href="#contact"
               className="hero-secondary-button"
             >
-              Let's Connect
+              Get in Touch
             </a>
 
           </div>
@@ -73,33 +85,36 @@ function Hero() {
 
           {/* Social Links */}
           <div className="hero-socials">
-<a
-  href="https://github.com/devnirala2074-boop"
-  aria-label="GitHub"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  GitHub
-</a>
+            <a
+              href="https://github.com/devnirala2074-boop"
+              aria-label="GitHub Profile"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon-btn"
+            >
+              <FaGithub />
+              <span>GitHub</span>
+            </a>
 
-<a
-  href="https://www.linkedin.com/in/chandradev-nirala-99752b414/"
-  aria-label="LinkedIn"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  LinkedIn
-</a>
+            <a
+              href="https://www.linkedin.com/in/chandradev-nirala-99752b414/"
+              aria-label="LinkedIn Profile"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon-btn"
+            >
+              <FaLinkedinIn />
+              <span>LinkedIn</span>
+            </a>
 
-<a
-  href="https://www.instagram.com/nirala.dev74/?hl=en"
-  aria-label="Instagram"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Instagram
-</a>
-
+            <a
+              href="mailto:devnirala2074@gmail.com"
+              aria-label="Send Email"
+              className="social-icon-btn"
+            >
+              <FaEnvelope />
+              <span>Email</span>
+            </a>
           </div>
 
         </div>

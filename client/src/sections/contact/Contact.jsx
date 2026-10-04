@@ -5,6 +5,7 @@
 // =====================================
 
 import { useState } from "react";
+import { FaEnvelope, FaWhatsapp, FaMapMarkerAlt, FaBriefcase, FaPaperPlane } from "react-icons/fa";
 import "./Contact.css";
 
 function Contact() {
@@ -284,79 +285,60 @@ ${message.trim()}
 
           <div className="contact-info">
 
-
             {/* EMAIL */}
-
             <div className="contact-item">
-
-              <span className="contact-number">
-                01
+              <span className="contact-icon-wrapper">
+                <FaEnvelope />
               </span>
-
               <div>
-
-                <small>
-                  Email
-                </small>
-
+                <small>Email</small>
                 <p>
-
-                  <a
-                    href="mailto:devnirala2074@gmail.com"
-                  >
+                  <a href="mailto:devnirala2074@gmail.com">
                     devnirala2074@gmail.com
                   </a>
-
                 </p>
-
               </div>
-
             </div>
 
+            {/* WHATSAPP */}
+            <div className="contact-item">
+              <span className="contact-icon-wrapper whatsapp">
+                <FaWhatsapp />
+              </span>
+              <div>
+                <small>WhatsApp & Phone</small>
+                <p>
+                  <a
+                    href="https://wa.me/919630949975"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    +91 9630949975
+                  </a>
+                </p>
+              </div>
+            </div>
 
             {/* LOCATION */}
-
             <div className="contact-item">
-
-              <span className="contact-number">
-                02
+              <span className="contact-icon-wrapper">
+                <FaMapMarkerAlt />
               </span>
-
               <div>
-
-                <small>
-                  Location
-                </small>
-
-                <p>
-                  India
-                </p>
-
+                <small>Location</small>
+                <p>Chhattisgarh, India</p>
               </div>
-
             </div>
 
-
             {/* AVAILABILITY */}
-
             <div className="contact-item">
-
-              <span className="contact-number">
-                03
+              <span className="contact-icon-wrapper active">
+                <FaBriefcase />
               </span>
-
               <div>
-
-                <small>
-                  Availability
-                </small>
-
-                <p>
-                  Open to opportunities
-                </p>
-
+                <small>Availability</small>
+                <p>Open to Full-Time Roles & Internships</p>
               </div>
-
             </div>
 
           </div>
@@ -502,12 +484,13 @@ ${message.trim()}
               className="contact-submit"
               disabled={isSending}
             >
-
-              {isSending
-                ? "Opening WhatsApp..."
-                : "Send Message ↗"
-              }
-
+              <FaPaperPlane />
+              <span>
+                {isSending
+                  ? "Opening WhatsApp..."
+                  : "Send Message via WhatsApp"
+                }
+              </span>
             </button>
 
           </form>

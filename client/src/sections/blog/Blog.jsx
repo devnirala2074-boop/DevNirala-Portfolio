@@ -1,30 +1,39 @@
+// =========================================
+// DEVNIRALA PORTFOLIO
+// BLOG & ENGINEERING NOTES
+// =========================================
+
+import { FaBookOpen, FaClock } from "react-icons/fa";
 import "./Blog.css";
 
 function Blog() {
   const articles = [
     {
       number: "01",
-      category: "FULL STACK",
-      title: "Building Modern Full Stack Applications",
+      category: "FULL STACK ARCHITECTURE",
+      title: "Structuring Scalable MERN Applications: MVC & Clean Route Design",
       description:
-        "My approach to building scalable web applications with frontend, backend and database technologies.",
-      date: "Coming Soon",
+        "Architectural patterns for separating concerns across controllers, models, and middleware in Node.js and Express to build maintainable full-stack systems.",
+      readTime: "5 min read",
+      status: "In Progress",
     },
     {
       number: "02",
-      category: "JAVASCRIPT",
-      title: "JavaScript Concepts I Learned",
+      category: "BACKEND SECURITY",
+      title: "Implementing Role-Based Access Control & JWT in Modern Express APIs",
       description:
-        "Practical notes and lessons from working with JavaScript and modern web development.",
-      date: "Coming Soon",
+        "A practical guide to securing RESTful API endpoints with stateless JSON Web Tokens, password hashing via bcrypt, and authorization middleware.",
+      readTime: "6 min read",
+      status: "In Progress",
     },
     {
       number: "03",
-      category: "WEB DEVELOPMENT",
-      title: "From Idea to Real Project",
+      category: "DATABASE MODELING",
+      title: "MongoDB Schema Design: Embedding vs Referencing for Real Applications",
       description:
-        "How I turn an idea into a functional, interactive and user-focused web application.",
-      date: "Coming Soon",
+        "Trade-offs and real-world considerations when structuring document relationships in MongoDB for multi-tenant and collaborative tools.",
+      readTime: "4 min read",
+      status: "In Progress",
     },
   ];
 
@@ -33,16 +42,16 @@ function Blog() {
       <div className="blog-container">
 
         <div className="blog-header">
-          <span className="section-label">05 — BLOG</span>
+          <span className="section-label">05 — ENGINEERING NOTES</span>
 
           <h2>
-            Thoughts, ideas &{" "}
-            <span>experiments.</span>
+            Technical thoughts &{" "}
+            <span>architectural reflections.</span>
           </h2>
 
           <p>
-            Sharing what I learn, build and discover throughout my
-            development journey.
+            Insights, code explorations, and practical lessons documented throughout
+            my journey building full-stack software.
           </p>
         </div>
 
@@ -51,17 +60,24 @@ function Blog() {
             <article className="blog-card" key={article.number}>
 
               <div className="blog-card-top">
-                <span>{article.number}</span>
-                <span>{article.category}</span>
+                <span className="blog-number">{article.number}</span>
+                <span className="blog-category">{article.category}</span>
               </div>
 
-              <h3>{article.title}</h3>
+              <h3 className="blog-title">{article.title}</h3>
 
-              <p>{article.description}</p>
+              <p className="blog-desc">{article.description}</p>
 
               <div className="blog-card-bottom">
-                <span>{article.date}</span>
-                <button type="button">Read Article ↗</button>
+                <div className="blog-read-time">
+                  <FaClock />
+                  <span>{article.readTime}</span>
+                </div>
+
+                <div className="blog-status-badge">
+                  <FaBookOpen />
+                  <span>{article.status}</span>
+                </div>
               </div>
 
             </article>

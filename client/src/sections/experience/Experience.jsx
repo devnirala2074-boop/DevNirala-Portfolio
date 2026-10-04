@@ -2,48 +2,50 @@ import "./Experience.css";
 
 const experiences = [
   {
-    year: "2026",
-    type: "CURRENT",
-    title: "Full Stack Development",
-    organization: "Full Stack Training & Project Development",
+    year: "2026 — Present",
+    type: "FULL STACK",
+    title: "Full Stack Web Development & System Projects",
+    organization: "Technical Training & Applied Engineering",
     description:
-      "Developing modern full-stack web applications using frontend, backend and database technologies while building real-world projects.",
+      "Engineering full-stack web applications across the MERN stack (React, Node.js, Express, MongoDB). Designing modular MVC backends, role-based authentication flows with JWT, and responsive frontend architectures for real-world applications.",
     technologies: [
       "React.js",
-      "JavaScript",
       "Node.js",
       "Express.js",
       "MongoDB",
+      "JWT",
+      "RESTful APIs",
     ],
   },
   {
-    year: "2025 — 2026",
-    type: "PROJECTS",
-    title: "Web Development Journey",
-    organization: "Personal & Academic Projects",
+    year: "2024 — Present",
+    type: "EDUCATION",
+    title: "B.Tech in Computer Science & Engineering",
+    organization: "CSVTU (Pursuing)",
     description:
-      "Designed and developed interactive websites and full-stack applications while strengthening practical development and problem-solving skills.",
+      "Pursuing bachelor's degree in Computer Science & Engineering. Building strong theoretical and applied foundations in Data Structures & Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, and Computer Networks.",
     technologies: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "React",
-      "Node.js",
-    ],
-  },
-  {
-    year: "2025",
-    type: "FOUNDATION",
-    title: "Programming & Web Fundamentals",
-    organization: "Learning & Practice",
-    description:
-      "Built a strong foundation in programming, web technologies, databases and software development concepts through continuous practice.",
-    technologies: [
-      "C",
-      "C++",
+      "Data Structures",
+      "Algorithms",
       "Java",
-      "Python",
+      "C++",
       "SQL",
+      "DBMS",
+    ],
+  },
+  {
+    year: "2024 — 2025",
+    type: "FOUNDATION",
+    title: "Programming Foundations & Technical Learning",
+    organization: "Practical Certification & Algorithmic Practice",
+    description:
+      "Solidified core software engineering disciplines, logical problem solving, backend scripting with Python, and web standards through hands-on practice, version control with Git, and database modeling.",
+    technologies: [
+      "Python",
+      "JavaScript",
+      "C",
+      "SQL",
+      "Git & GitHub",
     ],
   },
 ];

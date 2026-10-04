@@ -1,1033 +1,429 @@
 // =========================================
 // DEVNIRALA PORTFOLIO
-// PROJECTS SECTION
+// PROJECTS SECTION — PROFESSIONAL SHOWCASE
 // =========================================
 
 import { useMemo, useState } from "react";
+import { FaGithub, FaExternalLinkAlt, FaCode } from "react-icons/fa";
 import "./Projects.css";
 
-
 // =========================================
-// PROJECT DATA
+// AUTHENTIC PROJECT DATA
 // =========================================
 
 const projects = [
   {
+    id: "task-management",
     number: "01",
-    title: "Expense Tracker",
+    title: "Task Management System (TaskFlow)",
     description:
-      "A full-stack personal finance platform for tracking expenses, income, budgets and spending patterns.",
+      "Production-structured full-stack task management platform featuring dual-role access control, task delegation, lifecycle status tracking, and protected RESTful API routes.",
     category: "Full Stack",
-    technologies: ["React", "Node.js", "Express", "MongoDB"],
-    status: "Featured",
+    technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Mongoose", "Vite"],
+    features: [
+      "Role-Based Access Control (Admin & Member)",
+      "JWT Authentication & Protected Routes",
+      "Admin Analytics Dashboard & User Management",
+      "Personalized 'My Tasks' Status Lifecycle",
+      "Modular MVC Backend Architecture",
+    ],
+    status: "Completed Build",
+    statusType: "completed",
+    availability: "Local Full-Stack Workspace",
+    image: "/projects/task-management.png",
+    githubUrl: null,
+    liveUrl: null,
   },
 
   {
+    id: "college-portal",
     number: "02",
-    title: "College Management System",
+    title: "Campus Management System (College Portal)",
     description:
-      "A complete academic management platform for students, faculty, authentication, records and administration.",
+      "Comprehensive academic administration platform with dedicated portals for administrators, faculty members, and students, integrating attendance monitoring and automated notifications.",
     category: "Full Stack",
-    technologies: ["React", "Node.js", "Express", "MongoDB"],
-    status: "Featured",
+    technologies: ["Node.js", "Express.js", "MongoDB", "JWT", "Nodemailer", "JavaScript", "HTML5/CSS3"],
+    features: [
+      "Multi-Role Portal Access (Admin, Faculty, Student)",
+      "Student Attendance Tracking System",
+      "Automated Email Inquiries with Nodemailer",
+      "Academic Department, Course & Placement Catalogs",
+      "Secure Password Hashing with bcryptjs",
+    ],
+    status: "Completed Build",
+    statusType: "completed",
+    availability: "Local Full-Stack Workspace",
+    image: "/projects/college-portal.png",
+    githubUrl: null,
+    liveUrl: null,
   },
 
   {
+    id: "expense-tracker",
     number: "03",
-    title: "E-Commerce Platform",
+    title: "Flat Expense Tracker (Roommate Accounting)",
     description:
-      "A scalable online shopping platform with products, categories, cart, checkout and order management.",
+      "Financial ledger application designed for shared apartments to automate roommate expense splitting, monthly cycle balancing, settlement calculations, and financial audit trails.",
     category: "Full Stack",
-    technologies: ["React", "Node.js", "Express", "MongoDB"],
-    status: "Featured",
+    technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Mongoose", "JWT"],
+    features: [
+      "Shared Flat vs Personal Expense Segregation",
+      "Automated Balances & Settlement Suggestions",
+      "Monthly Accounting Cycle Locking",
+      "Receipt Ledger & Audit History Tracking",
+      "Role-Based Flat Membership & Admin Controls",
+    ],
+    status: "In Active Development",
+    statusType: "building",
+    availability: "SRS & Architecture Complete",
+    image: "/projects/expense-tracker.png",
+    githubUrl: null,
+    liveUrl: null,
   },
 
   {
+    id: "resume-builder",
     number: "04",
-    title: "Learning Management System",
+    title: "ResumePro Interactive Builder",
     description:
-      "An online education platform for courses, lessons, instructors, students and learning progress.",
-    category: "Full Stack",
-    technologies: ["React", "Node.js", "MongoDB", "JWT"],
-    status: "Featured",
+      "Interactive client-side resume builder enabling real-time live preview rendering, dynamic section configuration, local draft auto-saving, and direct document generation.",
+    category: "Frontend",
+    technologies: ["JavaScript", "HTML5", "CSS3", "LocalStorage", "Client-Side Export"],
+    features: [
+      "Real-Time Reactive Live Preview",
+      "Multi-Step Modular Section Navigation",
+      "LocalStorage Session Persistence",
+      "Custom Template Typography & Color Accents",
+      "Client-Side Document Export Workflow",
+    ],
+    status: "Completed Web App",
+    statusType: "completed",
+    availability: "Local Workspace Application",
+    image: "/projects/resume-builder.png",
+    githubUrl: null,
+    liveUrl: null,
   },
 
   {
+    id: "rakhi-verse",
     number: "05",
-    title: "Job Portal",
+    title: "RakhiVerse Interactive Celebration Experience",
     description:
-      "A recruitment platform connecting job seekers with companies through job listings and applications.",
-    category: "Full Stack",
-    technologies: ["React", "Node.js", "Express", "MongoDB"],
-    status: "Building",
+      "Engaging cultural web experience built with responsive canvas animations, Web Audio API synthesis, dynamic gesture interactions, and personalized card messaging.",
+    category: "Frontend",
+    technologies: ["HTML5", "CSS3", "Modern JavaScript", "Web Audio API", "CSS Animations"],
+    features: [
+      "Interactive Touch & Click Micro-Animations",
+      "Procedural Visual Effects & Particle Systems",
+      "Web Audio Sound Integration",
+      "Custom Digital Card Generator",
+      "Responsive Cross-Device Layout",
+    ],
+    status: "Live on GitHub",
+    statusType: "live",
+    availability: "Open Source Repository",
+    image: null,
+    githubUrl: "https://github.com/devnirala2074-boop/rakhi-verse",
+    liveUrl: null,
   },
 
   {
+    id: "gym-platform",
     number: "06",
-    title: "Hospital Management System",
+    title: "IronFit Gym & Inquiry Platform",
     description:
-      "A healthcare administration platform for appointments, patients, doctors and medical records.",
+      "Modern fitness studio web application featuring service package catalogs, trainer profiles, responsive schedules, and an Express backend for automated email inquiry delivery.",
     category: "Full Stack",
-    technologies: ["React", "Node.js", "MongoDB", "JWT"],
-    status: "Building",
+    technologies: ["Node.js", "Express.js", "Nodemailer", "HTML5", "CSS3", "JavaScript"],
+    features: [
+      "Membership Package & Facility Showcase",
+      "Express REST Endpoint for Inquiry Processing",
+      "Nodemailer Automated Email Notifications",
+      "Server-Side Form Sanitization & Validation",
+      "High-Performance Responsive Layout",
+    ],
+    status: "Completed Web App",
+    statusType: "completed",
+    availability: "Local Full-Stack Workspace",
+    image: null,
+    githubUrl: null,
+    liveUrl: null,
   },
 
   {
+    id: "ai-resume-analyzer",
     number: "07",
-    title: "Food Delivery Platform",
-    description:
-      "A food ordering application with restaurants, menus, carts, orders and delivery workflows.",
-    category: "Full Stack",
-    technologies: ["React", "Node.js", "Express", "MongoDB"],
-    status: "Building",
-  },
-
-  {
-    number: "08",
-    title: "Real Estate Platform",
-    description:
-      "A property discovery platform for searching, filtering and managing residential and commercial listings.",
-    category: "Full Stack",
-    technologies: ["React", "Node.js", "MongoDB", "Cloudinary"],
-    status: "Building",
-  },
-
-  {
-    number: "09",
-    title: "Event Management Platform",
-    description:
-      "A platform for creating events, managing registrations, attendees and event schedules.",
-    category: "Full Stack",
-    technologies: ["React", "Node.js", "MongoDB", "JWT"],
-    status: "Building",
-  },
-
-  {
-    number: "10",
-    title: "Project Management Tool",
-    description:
-      "A collaborative workspace for managing projects, tasks, teams, deadlines and productivity.",
-    category: "SaaS",
-    technologies: ["React", "Node.js", "MongoDB", "Socket.io"],
-    status: "Building",
-  },
-
-  {
-    number: "11",
-    title: "Customer Relationship Manager",
-    description:
-      "A CRM application for managing customers, leads, communication and sales activities.",
-    category: "SaaS",
-    technologies: ["React", "Node.js", "Express", "MongoDB"],
-    status: "Building",
-  },
-
-  {
-    number: "12",
-    title: "Inventory Management System",
-    description:
-      "A business inventory platform for products, stock levels, suppliers and transactions.",
-    category: "Full Stack",
-    technologies: ["React", "Node.js", "MongoDB", "Chart.js"],
-    status: "Building",
-  },
-
-  {
-    number: "13",
-    title: "Invoice Management System",
-    description:
-      "A professional invoicing platform for creating invoices, managing customers and tracking payments.",
-    category: "SaaS",
-    technologies: ["React", "Node.js", "MongoDB", "PDF"],
-    status: "Building",
-  },
-
-  {
-    number: "14",
-    title: "Task Management App",
-    description:
-      "A productivity application for creating, organizing, prioritizing and completing daily tasks.",
-    category: "Frontend",
-    technologies: ["React", "JavaScript", "CSS", "LocalStorage"],
-    status: "Live",
-  },
-
-  {
-    number: "15",
-    title: "Real-Time Chat Application",
-    description:
-      "A real-time communication application supporting conversations, online status and instant messaging.",
-    category: "Full Stack",
-    technologies: ["React", "Node.js", "Socket.io", "MongoDB"],
-    status: "Featured",
-  },
-
-  {
-    number: "16",
-    title: "Social Media Platform",
-    description:
-      "A social networking application with profiles, posts, likes, comments and user interactions.",
-    category: "Full Stack",
-    technologies: ["React", "Node.js", "MongoDB", "Cloudinary"],
-    status: "Building",
-  },
-
-  {
-    number: "17",
-    title: "Blog Publishing Platform",
-    description:
-      "A modern publishing system for creating, editing and discovering articles and technical content.",
-    category: "Full Stack",
-    technologies: ["React", "Node.js", "MongoDB", "JWT"],
-    status: "Live",
-  },
-
-  {
-    number: "18",
-    title: "News Aggregator",
-    description:
-      "A news discovery interface that organizes articles by topics, sources and categories.",
-    category: "Frontend",
-    technologies: ["React", "JavaScript", "REST API", "CSS"],
-    status: "Live",
-  },
-
-  {
-    number: "19",
-    title: "Weather Dashboard",
-    description:
-      "A responsive weather dashboard displaying current conditions, forecasts and location-based data.",
-    category: "Frontend",
-    technologies: ["React", "REST API", "JavaScript", "CSS"],
-    status: "Live",
-  },
-
-  {
-    number: "20",
-    title: "Movie Discovery Platform",
-    description:
-      "A movie browsing application with search, categories, ratings and detailed movie information.",
-    category: "Frontend",
-    technologies: ["React", "REST API", "JavaScript", "CSS"],
-    status: "Live",
-  },
-
-  {
-    number: "21",
-    title: "Music Streaming UI",
-    description:
-      "A modern music streaming interface with playlists, albums, artists and audio controls.",
-    category: "Frontend",
-    technologies: ["React", "JavaScript", "CSS", "Web Audio"],
-    status: "Building",
-  },
-
-  {
-    number: "22",
-    title: "Personal Finance Dashboard",
-    description:
-      "An analytics dashboard for visualizing financial activity, budgets, savings and monthly trends.",
-    category: "Frontend",
-    technologies: ["React", "Chart.js", "JavaScript", "CSS"],
-    status: "Building",
-  },
-
-  {
-    number: "23",
-    title: "Admin Dashboard",
-    description:
-      "A reusable administration dashboard with analytics, users, activity and management interfaces.",
-    category: "Frontend",
-    technologies: ["React", "Chart.js", "JavaScript", "CSS"],
-    status: "Live",
-  },
-
-  {
-    number: "24",
-    title: "Analytics Dashboard",
-    description:
-      "A data visualization interface for monitoring business metrics, trends and performance indicators.",
-    category: "Frontend",
-    technologies: ["React", "Chart.js", "REST API", "CSS"],
-    status: "Building",
-  },
-
-  {
-    number: "25",
-    title: "SaaS Subscription Platform",
-    description:
-      "A subscription-based SaaS architecture with user accounts, plans, billing and dashboard workflows.",
-    category: "SaaS",
-    technologies: ["React", "Node.js", "MongoDB", "JWT"],
-    status: "Building",
-  },
-
-  {
-    number: "26",
-    title: "URL Shortener",
-    description:
-      "A URL management service that generates short links and tracks link usage and analytics.",
-    category: "Backend",
-    technologies: ["Node.js", "Express", "MongoDB", "REST API"],
-    status: "Live",
-  },
-
-  {
-    number: "27",
-    title: "Authentication Service",
-    description:
-      "A reusable authentication backend supporting registration, login, protected routes and token-based access.",
-    category: "Backend",
-    technologies: ["Node.js", "Express", "JWT", "MongoDB"],
-    status: "Building",
-  },
-
-  {
-    number: "28",
-    title: "REST API Platform",
-    description:
-      "A structured REST API backend designed around scalable resources, validation and authentication.",
-    category: "Backend",
-    technologies: ["Node.js", "Express", "MongoDB", "JWT"],
-    status: "Building",
-  },
-
-  {
-    number: "29",
-    title: "API Monitoring Dashboard",
-    description:
-      "A developer dashboard for monitoring API endpoints, response times and service availability.",
-    category: "Backend",
-    technologies: ["Node.js", "Express", "React", "MongoDB"],
-    status: "Building",
-  },
-
-  {
-    number: "30",
-    title: "File Management System",
-    description:
-      "A cloud-style file management application for uploading, organizing and managing digital documents.",
-    category: "Full Stack",
-    technologies: ["React", "Node.js", "MongoDB", "Cloudinary"],
-    status: "Building",
-  },
-
-  {
-    number: "31",
-    title: "Document Management System",
-    description:
-      "A secure document platform for organizing files, metadata, access permissions and document workflows.",
-    category: "SaaS",
-    technologies: ["React", "Node.js", "MongoDB", "JWT"],
-    status: "Building",
-  },
-
-  {
-    number: "32",
-    title: "Online Examination System",
-    description:
-      "A digital examination platform supporting question banks, tests, submissions and result analysis.",
-    category: "Full Stack",
-    technologies: ["React", "Node.js", "MongoDB", "Express"],
-    status: "Building",
-  },
-
-  {
-    number: "33",
-    title: "Quiz Platform",
-    description:
-      "An interactive quiz application with categories, scoring, timers and performance tracking.",
-    category: "Frontend",
-    technologies: ["React", "JavaScript", "CSS", "LocalStorage"],
-    status: "Live",
-  },
-
-  {
-    number: "34",
-    title: "Attendance Management System",
-    description:
-      "A digital attendance solution for managing students, attendance records and reports.",
-    category: "Full Stack",
-    technologies: ["React", "Node.js", "MongoDB", "Express"],
-    status: "Building",
-  },
-
-  {
-    number: "35",
-    title: "Employee Management System",
-    description:
-      "An internal business application for employee records, departments, roles and management workflows.",
-    category: "Full Stack",
-    technologies: ["React", "Node.js", "MongoDB", "JWT"],
-    status: "Building",
-  },
-
-  {
-    number: "36",
-    title: "HR Management Platform",
-    description:
-      "A human resources platform for employee data, leave management and organizational workflows.",
-    category: "SaaS",
-    technologies: ["React", "Node.js", "MongoDB", "Express"],
-    status: "Building",
-  },
-
-  {
-    number: "37",
-    title: "Appointment Booking System",
-    description:
-      "A scheduling platform for discovering available slots and managing appointments.",
-    category: "Full Stack",
-    technologies: ["React", "Node.js", "MongoDB", "Express"],
-    status: "Building",
-  },
-
-  {
-    number: "38",
-    title: "Travel Planning Platform",
-    description:
-      "A travel planning application for destinations, itineraries, activities and trip organization.",
-    category: "Frontend",
-    technologies: ["React", "REST API", "JavaScript", "CSS"],
-    status: "Building",
-  },
-
-  {
-    number: "39",
-    title: "Hotel Booking Platform",
-    description:
-      "A hotel discovery and reservation interface with search, filtering and booking workflows.",
-    category: "Full Stack",
-    technologies: ["React", "Node.js", "MongoDB", "Express"],
-    status: "Building",
-  },
-
-  {
-    number: "40",
-    title: "Restaurant Management System",
-    description:
-      "A restaurant operations platform for menus, orders, tables and management workflows.",
-    category: "Full Stack",
-    technologies: ["React", "Node.js", "MongoDB", "Express"],
-    status: "Building",
-  },
-
-  {
-    number: "41",
     title: "AI Resume Analyzer",
     description:
-      "An AI-powered tool that analyzes resumes and provides structured insights for improvement.",
+      "AI-driven resume parsing tool designed to evaluate document structure, assess ATS keyword alignment, and provide structured, actionable improvement insights.",
     category: "AI/ML",
-    technologies: ["React", "Node.js", "Python", "AI API"],
-    status: "Building",
+    technologies: ["React.js", "Node.js", "Python", "REST API", "AI Model APIs"],
+    features: [
+      "Document Structure & Section Parsing",
+      "ATS Keyword Matching & Score Calculation",
+      "Actionable Feedback for Bullet Points",
+      "Structured Technical Recommendations",
+      "Exportable Analysis Summary",
+    ],
+    status: "In Development",
+    statusType: "building",
+    availability: "Pipeline & Prototype Phase",
+    image: null,
+    githubUrl: null,
+    liveUrl: null,
   },
 
   {
-    number: "42",
-    title: "AI Content Assistant",
+    id: "devnirala-portfolio",
+    number: "08",
+    title: "DevNirala Full-Stack Portfolio",
     description:
-      "An AI productivity tool for generating, rewriting and organizing content through a web interface.",
-    category: "AI/ML",
-    technologies: ["React", "Node.js", "AI API", "MongoDB"],
-    status: "Building",
-  },
-
-  {
-    number: "43",
-    title: "AI Chat Assistant",
-    description:
-      "A conversational AI interface with chat history, prompts and assistant-style interactions.",
-    category: "AI/ML",
-    technologies: ["React", "Node.js", "AI API", "MongoDB"],
-    status: "Building",
-  },
-
-  {
-    number: "44",
-    title: "AI Image Generator",
-    description:
-      "A creative AI application for generating images from natural language prompts.",
-    category: "AI/ML",
-    technologies: ["React", "Node.js", "AI API", "Cloudinary"],
-    status: "Building",
-  },
-
-  {
-    number: "45",
-    title: "Recommendation Engine",
-    description:
-      "A recommendation-focused application that suggests relevant content based on user interactions.",
-    category: "AI/ML",
-    technologies: ["Python", "Machine Learning", "React", "REST API"],
-    status: "Building",
-  },
-
-  {
-    number: "46",
-    title: "Customer Support AI",
-    description:
-      "An AI-assisted support platform for answering customer questions and organizing conversations.",
-    category: "AI/ML",
-    technologies: ["React", "Node.js", "AI API", "MongoDB"],
-    status: "Building",
-  },
-
-  {
-    number: "47",
-    title: "Code Snippet Manager",
-    description:
-      "A developer productivity tool for storing, searching and organizing reusable code snippets.",
-    category: "Developer Tools",
-    technologies: ["React", "Node.js", "MongoDB", "Express"],
-    status: "Building",
-  },
-
-  {
-    number: "48",
-    title: "Developer API Tester",
-    description:
-      "A browser-based API testing workspace for sending requests and inspecting responses.",
-    category: "Developer Tools",
-    technologies: ["React", "JavaScript", "REST API", "CSS"],
-    status: "Building",
-  },
-
-  {
-    number: "49",
-    title: "Markdown Editor",
-    description:
-      "A developer-friendly markdown editor with live preview and document management.",
-    category: "Developer Tools",
-    technologies: ["React", "JavaScript", "Markdown", "CSS"],
-    status: "Live",
-  },
-
-  {
-    number: "50",
-    title: "GitHub Profile Analyzer",
-    description:
-      "A developer analytics tool for exploring GitHub profiles, repositories and contribution data.",
-    category: "Developer Tools",
-    technologies: ["React", "GitHub API", "JavaScript", "CSS"],
-    status: "Building",
-  },
-
-  {
-    number: "51",
-    title: "Password Manager",
-    description:
-      "A secure-style credential management interface focused on organizing account information.",
-    category: "Developer Tools",
-    technologies: ["React", "Node.js", "MongoDB", "JWT"],
-    status: "Building",
-  },
-
-  {
-    number: "52",
-    title: "Productivity Workspace",
-    description:
-      "A unified workspace combining tasks, notes, goals and productivity tracking.",
-    category: "SaaS",
-    technologies: ["React", "Node.js", "MongoDB", "Express"],
-    status: "Building",
-  },
-
-  {
-    number: "53",
-    title: "Digital Notes Application",
-    description:
-      "A modern notes application for creating, editing, searching and organizing personal notes.",
+      "Production developer portfolio engineered with React 19 and Vite, featuring custom design tokens, theme management, responsive glassmorphic cards, and zero external UI bloat.",
     category: "Frontend",
-    technologies: ["React", "JavaScript", "CSS", "LocalStorage"],
-    status: "Live",
-  },
-
-  {
-    number: "54",
-    title: "Habit Tracker",
-    description:
-      "A habit-building application for tracking routines, streaks and personal progress.",
-    category: "Frontend",
-    technologies: ["React", "JavaScript", "CSS", "LocalStorage"],
-    status: "Live",
-  },
-
-  {
-    number: "55",
-    title: "Fitness Tracking Dashboard",
-    description:
-      "A fitness dashboard for tracking workouts, goals, progress and activity statistics.",
-    category: "Frontend",
-    technologies: ["React", "Chart.js", "JavaScript", "CSS"],
-    status: "Building",
-  },
-
-  {
-    number: "56",
-    title: "Subscription Tracker",
-    description:
-      "A personal finance utility for tracking recurring subscriptions and monthly costs.",
-    category: "Frontend",
-    technologies: ["React", "JavaScript", "CSS", "LocalStorage"],
-    status: "Building",
-  },
-
-  {
-    number: "57",
-    title: "Digital Marketplace",
-    description:
-      "A marketplace architecture for discovering, listing and purchasing digital products.",
-    category: "Full Stack",
-    technologies: ["React", "Node.js", "MongoDB", "Express"],
-    status: "Building",
-  },
-
-  {
-    number: "58",
-    title: "Freelance Marketplace",
-    description:
-      "A platform connecting clients and freelancers through profiles, projects and proposals.",
-    category: "SaaS",
-    technologies: ["React", "Node.js", "MongoDB", "Socket.io"],
-    status: "Building",
-  },
-
-  {
-    number: "59",
-    title: "Community Forum",
-    description:
-      "A discussion platform with communities, posts, comments, voting and user profiles.",
-    category: "Full Stack",
-    technologies: ["React", "Node.js", "MongoDB", "Express"],
-    status: "Building",
-  },
-
-  {
-    number: "60",
-    title: "Developer Portfolio Platform",
-    description:
-      "A professional portfolio platform designed to showcase projects, skills, experience and technical growth.",
-    category: "Frontend",
-    technologies: ["React", "JavaScript", "CSS", "Vite"],
-    status: "Building",
+    technologies: ["React 19", "Vite", "CSS Custom Properties", "React Icons", "SEO Optimization"],
+    features: [
+      "Modular Component Architecture",
+      "CSS Design Tokens with Dark/Light Support",
+      "Semantic Accessible Structure & SEO Meta",
+      "Multi-Device Fluid Responsive Grid",
+      "Zero Heavy Third-Party UI Library Overhead",
+    ],
+    status: "Live on GitHub",
+    statusType: "live",
+    availability: "Active Repository",
+    image: null,
+    githubUrl: "https://github.com/devnirala2074-boop/DevNirala-Portfolio",
+    liveUrl: null,
   },
 ];
 
+const categories = ["All", "Full Stack", "Frontend", "AI/ML"];
 
 // =========================================
-// PROJECT CATEGORIES
-// =========================================
-
-const categories = [
-  "All",
-  "Full Stack",
-  "Frontend",
-  "Backend",
-  "AI/ML",
-  "SaaS",
-  "Developer Tools",
-];
-
-
-// =========================================
-// PROJECT COMPONENT
+// PROJECTS COMPONENT
 // =========================================
 
 function Projects() {
-
-  // =========================================
-  // FILTER STATE
-  // =========================================
-
-  const [activeCategory, setActiveCategory] =
-    useState("All");
-
-
-  // =========================================
-  // SEARCH STATE
-  // =========================================
-
-  const [searchTerm, setSearchTerm] =
-    useState("");
-
-
-  // =========================================
-  // FILTERED PROJECTS
-  // =========================================
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const filteredProjects = useMemo(() => {
-
     return projects.filter((project) => {
-
       const matchesCategory =
-        activeCategory === "All" ||
-        project.category === activeCategory;
+        activeCategory === "All" || project.category === activeCategory;
 
-
-      const searchText = searchTerm
-        .toLowerCase()
-        .trim();
-
-
+      const query = searchTerm.toLowerCase().trim();
       const matchesSearch =
-        !searchText ||
-        project.title
-          .toLowerCase()
-          .includes(searchText) ||
-        project.description
-          .toLowerCase()
-          .includes(searchText) ||
-        project.technologies.some((technology) =>
-          technology
-            .toLowerCase()
-            .includes(searchText)
-        );
+        !query ||
+        project.title.toLowerCase().includes(query) ||
+        project.description.toLowerCase().includes(query) ||
+        project.technologies.some((tech) => tech.toLowerCase().includes(query)) ||
+        project.features.some((feat) => feat.toLowerCase().includes(query));
 
-
-      return (
-        matchesCategory &&
-        matchesSearch
-      );
-
+      return matchesCategory && matchesSearch;
     });
-
   }, [activeCategory, searchTerm]);
 
-
-  // =========================================
-  // RENDER
-  // =========================================
-
   return (
-    <section
-      className="projects"
-      id="projects"
-    >
-
+    <section className="projects" id="projects">
       <div className="projects-container">
-
 
         {/* =====================================
             SECTION HEADER
         ===================================== */}
-
         <div className="projects-heading">
-
-          <span className="section-label">
-            03 — PROJECTS
-          </span>
-
+          <span className="section-label">03 — FEATURED PROJECTS</span>
 
           <h2>
-            Things I've
-            <span> built.</span>
+            Engineering solutions,
+            <span> built with purpose.</span>
           </h2>
 
-
           <p>
-            A collection of real-world projects
-            covering full-stack development,
-            SaaS, AI, developer tools and
-            modern frontend experiences.
+            A curated showcase of real-world full-stack systems, architectural
+            implementations, and interactive web applications developed across
+            the MERN stack.
           </p>
-
         </div>
-
 
         {/* =====================================
             CONTROLS
         ===================================== */}
-
         <div className="projects-controls">
-
-
-          {/* FILTERS */}
-
           <div className="projects-filters">
-
             {categories.map((category) => (
-
               <button
                 key={category}
                 type="button"
-                className={
-                  activeCategory === category
-                    ? "active"
-                    : ""
-                }
-                onClick={() =>
-                  setActiveCategory(category)
-                }
+                className={activeCategory === category ? "active" : ""}
+                onClick={() => setActiveCategory(category)}
               >
                 {category}
               </button>
-
             ))}
-
           </div>
-
-
-          {/* SEARCH */}
 
           <div className="projects-search">
-
             <input
               type="search"
-              placeholder="Search projects..."
+              placeholder="Filter by tech or keyword (e.g. MERN, JWT, React)..."
               value={searchTerm}
-              onChange={(event) =>
-                setSearchTerm(
-                  event.target.value
-                )
-              }
+              onChange={(e) => setSearchTerm(e.target.value)}
               aria-label="Search projects"
             />
-
           </div>
-
         </div>
 
-
         {/* =====================================
-            PROJECT COUNT
+            COUNT BAR
         ===================================== */}
-
         <div className="projects-count">
-
-          Showing
-
-          <strong>
-            {filteredProjects.length}
-          </strong>
-
-          of
-
-          <strong>
-            {projects.length}
-          </strong>
-
-          projects
-
+          Showing <strong>{filteredProjects.length}</strong> of{" "}
+          <strong>{projects.length}</strong> verified projects
         </div>
 
-
         {/* =====================================
-            PROJECT LIST
+            PROJECTS GRID
         ===================================== */}
-
         {filteredProjects.length > 0 ? (
-
           <div className="projects-list">
-
             {filteredProjects.map((project) => (
+              <article className="project-card" key={project.id}>
 
-              <article
-                className="project-card"
-                key={project.number}
-              >
-
-
-                {/* =================================
-                    TOP
-                ================================= */}
-
-                <div className="project-top">
-
-                  <span className="project-number">
-                    {project.number}
-                  </span>
-
-
-                  <span className="project-status">
-                    {project.status}
-                  </span>
-
-                </div>
-
-
-                {/* =================================
-                    MAIN CONTENT
-                ================================= */}
-
-                <div className="project-content">
-
-
-                  {/* PROJECT INFO */}
-
-                  <div className="project-info">
-
-                    <span className="project-category">
-                      {project.category}
-                    </span>
-
-
-                    <h3>
-                      {project.title}
-                    </h3>
-
-
-                    <p>
-                      {project.description}
-                    </p>
-
-
-                    {/* TECHNOLOGIES */}
-
-                    <div className="project-tech">
-
-                      {project.technologies.map(
-                        (technology) => (
-
-                          <span
-                            key={technology}
-                          >
-                            {technology}
-                          </span>
-
-                        )
-                      )}
-
-                    </div>
-
-                  </div>
-
-
-                  {/* =================================
-                      PROJECT VISUAL
-                  ================================= */}
-
-                  <div className="project-visual">
-
-                    <div className="project-window">
-
-
-                      {/* WINDOW BAR */}
-
-                      <div className="window-bar">
-
-                        <span></span>
-                        <span></span>
-                        <span></span>
-
+                {/* VISUAL / PREVIEW */}
+                <div className="project-visual-wrapper">
+                  {project.image ? (
+                    <div className="project-screenshot-container">
+                      <div className="project-browser-bar">
+                        <span className="browser-dot red"></span>
+                        <span className="browser-dot yellow"></span>
+                        <span className="browser-dot green"></span>
+                        <span className="browser-url-text">devnirala.local/{project.id}</span>
                       </div>
-
-
-                      {/* WINDOW CONTENT */}
-
-                      <div className="window-content">
-
-                        <div className="visual-line large"></div>
-
-                        <div className="visual-line"></div>
-
-                        <div className="visual-line short"></div>
-
-
-                        <div className="visual-boxes">
-
-                          <div></div>
-                          <div></div>
-                          <div></div>
-
+                      <img
+                        src={project.image}
+                        alt={`${project.title} screenshot`}
+                        className="project-screenshot-img"
+                        loading="lazy"
+                      />
+                    </div>
+                  ) : (
+                    <div className="project-code-preview">
+                      <div className="project-browser-bar">
+                        <span className="browser-dot red"></span>
+                        <span className="browser-dot yellow"></span>
+                        <span className="browser-dot green"></span>
+                        <span className="browser-url-text">{project.category.toLowerCase().replace(/\s+/g, "-")}.config</span>
+                      </div>
+                      <div className="code-preview-body">
+                        <div className="code-line">
+                          <span className="code-keyword">const</span> stack = [
+                          {project.technologies.slice(0, 3).map((t, idx) => (
+                            <span key={t} className="code-string">"{t}"{idx < 2 ? ", " : ""}</span>
+                          ))}];
                         </div>
-
+                        <div className="code-line">
+                          <span className="code-keyword">export default</span> {project.title.split(" ")[0]}Service;
+                        </div>
+                        <div className="code-badge-overlay">
+                          <FaCode />
+                          <span>{project.category} Architecture</span>
+                        </div>
                       </div>
-
                     </div>
+                  )}
 
+                  {/* Badges Overlay */}
+                  <div className="project-badge-bar">
+                    <span className="project-category-badge">{project.category}</span>
+                    <span className={`project-status-badge status-${project.statusType}`}>
+                      {project.status}
+                    </span>
                   </div>
-
                 </div>
 
+                {/* CARD BODY */}
+                <div className="project-body">
+                  <div className="project-header-row">
+                    <span className="project-number">{project.number}</span>
+                    <h3 className="project-title">{project.title}</h3>
+                  </div>
 
-                {/* =================================
-                    BOTTOM
-                ================================= */}
+                  <p className="project-desc">{project.description}</p>
 
-                <div className="project-bottom">
+                  {/* KEY FEATURES */}
+                  <div className="project-features-block">
+                    <h4 className="features-heading">Key Engineering Highlights:</h4>
+                    <ul className="features-list">
+                      {project.features.map((feature) => (
+                        <li key={feature}>
+                          <span className="feature-check">✓</span>
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
+                  {/* TECH PILLS */}
+                  <div className="project-tech-block">
+                    {project.technologies.map((tech) => (
+                      <span key={tech} className="tech-pill">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
 
-                  {/* LIVE DEMO */}
+                  {/* CARD FOOTER / ACTIONS */}
+                  <div className="project-footer">
+                    {project.githubUrl ? (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-btn project-btn-github"
+                        aria-label={`View ${project.title} source on GitHub`}
+                      >
+                        <FaGithub />
+                        <span>Source Code</span>
+                        <span className="arrow">↗</span>
+                      </a>
+                    ) : null}
 
-                  <a
-                    href="#"
-                    className="project-link primary"
-                    onClick={(event) =>
-                      event.preventDefault()
-                    }
-                  >
-                    Live Demo
-                    <span>↗</span>
-                  </a>
+                    {project.liveUrl ? (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-btn project-btn-primary"
+                        aria-label={`Open live demo of ${project.title}`}
+                      >
+                        <FaExternalLinkAlt />
+                        <span>Live Demo</span>
+                        <span className="arrow">↗</span>
+                      </a>
+                    ) : null}
 
-
-                  {/* GITHUB */}
-
-                  <a
-                    href="#"
-                    className="project-link"
-                    onClick={(event) =>
-                      event.preventDefault()
-                    }
-                  >
-                    GitHub
-                    <span>↗</span>
-                  </a>
-
+                    {/* Transparent availability note */}
+                    <div className="project-status-note">
+                      <span className="note-indicator"></span>
+                      <span>{project.availability}</span>
+                    </div>
+                  </div>
                 </div>
 
               </article>
-
             ))}
-
           </div>
-
         ) : (
-
-          /* =====================================
-             EMPTY STATE
-          ===================================== */
-
           <div className="projects-empty">
-
-            <h3>
-              No projects found
-            </h3>
-
-            <p>
-              Try another project name,
-              technology or category.
-            </p>
-
+            <h3>No projects found</h3>
+            <p>Try searching for another keyword or selecting a different category.</p>
           </div>
-
         )}
 
-
-        {/* =====================================
-            MORE PROJECTS
-        ===================================== */}
-
-        <div className="projects-more">
-
-          <span>
-            60 professional projects in
-            the collection.
-          </span>
-
-          <div className="projects-more-line"></div>
-
-        </div>
-
       </div>
-
-      
-
     </section>
   );
-
-
 }
-
 
 export default Projects;

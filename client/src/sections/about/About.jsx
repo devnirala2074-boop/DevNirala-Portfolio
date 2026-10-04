@@ -30,7 +30,7 @@ function About() {
             <div className="about-card">
               <div className="about-card-top">
                 <span className="about-dot"></span>
-                <span>developer.js</span>
+                <span>engineer.config.js</span>
               </div>
 
               <div className="about-code">
@@ -40,7 +40,7 @@ function About() {
                 </p>
 
                 <p className="code-indent">
-                  name: <span>"DevNirala"</span>,
+                  name: <span>"Chandr Dev Nirala"</span>,
                 </p>
 
                 <p className="code-indent">
@@ -48,11 +48,15 @@ function About() {
                 </p>
 
                 <p className="code-indent">
-                  passion: <span>"Building"</span>,
+                  coreStack: [<span>"React"</span>, <span>"Node.js"</span>, <span>"MongoDB"</span>],
                 </p>
 
                 <p className="code-indent">
-                  mindset: <span>"Always Learning"</span>
+                  focus: <span>"MERN & REST API Architecture"</span>,
+                </p>
+
+                <p className="code-indent">
+                  status: <span>"Open to Engineering Roles"</span>
                 </p>
 
                 <p>
@@ -66,43 +70,45 @@ function About() {
           <div className="about-info">
 
             <span className="about-small-title">
-              WHO I AM
+              BACKGROUND & DIRECTION
             </span>
 
             <h3>
-              Turning ideas into
-              <span> real-world products.</span>
+              Architecting full-stack systems from
+              <span> concept to deployment.</span>
             </h3>
 
             <p>
-              I'm a Full Stack Developer who enjoys turning ideas
-              into clean, interactive and scalable web applications.
-              I work across the frontend and backend to build
-              complete digital experiences.
+              I'm a Full Stack Developer passionate about solving real-world
+              problems with clean, maintainable code. I specialize in building
+              end-to-end web applications—combining responsive, accessible React
+              frontends with secure Node.js and Express RESTful backends.
             </p>
 
             <p>
-              I enjoy learning new technologies, solving problems
-              through code and continuously improving the way I
-              build for the web.
+              My technical direction focuses on modular architecture, role-based
+              access control, robust API design, and schema modeling with
+              MongoDB. Currently pursuing my B.Tech in Computer Science and Engineering,
+              I am focused on contributing to impactful engineering teams through
+              software development roles and internships.
             </p>
 
-            {/* Stats */}
+            {/* Authentic Engineering Highlights */}
             <div className="about-stats">
 
               <div className="about-stat">
-                <strong>11+</strong>
-                <span>Experience</span>
+                <strong>MERN</strong>
+                <span>Full Stack Focus</span>
               </div>
 
               <div className="about-stat">
-                <strong>15+</strong>
-                <span>Projects</span>
+                <strong>B.Tech CSE</strong>
+                <span>Computer Science</span>
               </div>
 
               <div className="about-stat">
-                <strong>13+</strong>
-                <span>Technologies</span>
+                <strong>RESTful</strong>
+                <span>API Architecture</span>
               </div>
 
             </div>

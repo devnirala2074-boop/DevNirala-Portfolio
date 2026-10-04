@@ -2,89 +2,74 @@ import "./Skills.css";
 
 const skillCategories = [
   {
-    title: "Programming Languages",
-    description: "Core languages I work and learn with.",
-    skills: [
-      "C",
-      "C++",
-      "Java",
-      "Python",
-      "JavaScript",
-      "HTML",
-      "CSS",
-      "SQL",
-    ],
-  },
-
-  {
-    title: "Frontend",
-    description: "Building responsive and interactive interfaces.",
+    title: "Frontend Development",
+    description: "Building responsive, modern, and accessible user interfaces.",
     skills: [
       "React.js",
-      "React Router",
+      "JavaScript (ES6+)",
+      "HTML5",
+      "CSS3",
       "Tailwind CSS",
       "Bootstrap",
       "Vite",
-      "Responsive Design",
+      "Responsive UI",
       "REST API Integration",
     ],
   },
 
   {
-    title: "Backend",
-    description: "Developing APIs and server-side applications.",
+    title: "Backend Development",
+    description: "Architecting server-side systems and RESTful API endpoints.",
     skills: [
       "Node.js",
       "Express.js",
-      "REST APIs",
-      "CRUD",
-      "JWT",
-      "Authentication",
+      "RESTful APIs",
+      "CRUD Operations",
+      "JWT Authentication",
       "Middleware",
       "MVC Architecture",
+      "Nodemailer",
     ],
   },
 
   {
-    title: "Database",
-    description: "Working with structured and NoSQL data.",
+    title: "Database & Storage",
+    description: "Managing structured relational and NoSQL document data.",
     skills: [
       "MongoDB",
-      "Mongoose",
+      "Mongoose ODM",
       "MongoDB Atlas",
       "MySQL",
-      "Database Design",
-      "Queries",
-      "Indexes",
+      "Schema Design",
+      "Data Modeling",
+      "Queries & Aggregations",
     ],
   },
 
   {
-    title: "Tools",
-    description: "Tools I use throughout the development workflow.",
+    title: "Programming Languages",
+    description: "Core programming languages for algorithmic problem solving.",
+    skills: [
+      "JavaScript",
+      "Python",
+      "C",
+      "C++",
+      "Java",
+      "SQL",
+    ],
+  },
+
+  {
+    title: "Tools & Platforms",
+    description: "Tools and workflows utilized throughout the software lifecycle.",
     skills: [
       "Git",
       "GitHub",
       "VS Code",
       "Postman",
       "MongoDB Compass",
-      "Chrome DevTools",
       "npm",
-    ],
-  },
-
-  {
-    title: "Animation & Creative",
-    description: "Creating engaging and polished interactions.",
-    skills: [
-      "CSS Animations",
-      "CSS Transitions",
-      "Framer Motion",
-      "GSAP",
-      "Scroll Animations",
-      "Micro-interactions",
-      "Three.js",
-      "React Three Fiber",
+      "Chrome DevTools",
     ],
   },
 ];
